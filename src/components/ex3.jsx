@@ -1,25 +1,25 @@
 import { useState } from "react";
-import syteles from '@/styles/Buymed.module.css'
+import syteles from "@/styles/Buymed.module.css";
 import { render } from "react-dom";
 
 export default function Ex3() {
-  let [name, setName] = useState("")
-  let [gender, setGender] = useState("male")
-  let [otherGender, setOtherGender] = useState("")
-  let [showOtherGenderInput, setShowOtherGenderInput] = useState(false)
-  
+  let [name, setName] = useState("");
+  let [gender, setGender] = useState("male");
+  let [otherGender, setOtherGender] = useState("");
+  let [showOtherGenderInput, setShowOtherGenderInput] = useState(false);
+
   function handleUpdateGender(e) {
-    let genderValue = e.target.value
+    let genderValue = e.target.value;
     if (genderValue == "male" || genderValue == "female") {
-      setShowOtherGenderInput(false)
-    }else{
-      setShowOtherGenderInput(true)
+      setShowOtherGenderInput(false);
+    } else {
+      setShowOtherGenderInput(true);
     }
-    setGender(genderValue)
+    setGender(genderValue);
   }
 
   function handleChangeName(e) {
-    setName(e.target.value)
+    setName(e.target.value);
   }
 
   function OtherGender() {
@@ -28,33 +28,37 @@ export default function Ex3() {
         <div>
           <label>
             Other gender:
-            <input type="text" name="otherGender" onChange={handleUpdateGender} />
+            <input
+              type="text"
+              name="otherGender"
+              onChange={handleUpdateGender}
+            />
           </label>
         </div>
-      )
+      );
     }
   }
 
   function handleSubmit(e) {
     if (name == "" || gender == "") {
-      alert('Please fill in the form')
-    }else{
+      alert("Please fill in the form");
+    } else {
       alert(`Name ${name} - gender ${gender}`);
     }
     e.preventDefault();
   }
 
-    return (
-      <div>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label>
-              Name:
-              <input type="text" name="name" onChange={handleChangeName} />
-            </label>
-          </div>
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>
+            Name:
+            <input type="text" name="name" onChange={handleChangeName} />
+          </label>
+        </div>
 
-          <div>
+        <div>
           <label>
             Gender:
             <select onChange={handleUpdateGender}>
@@ -63,14 +67,16 @@ export default function Ex3() {
               <option value="other">Other</option>
             </select>
           </label>
-          </div>
+        </div>
 
-          <OtherGender></OtherGender>
+        <OtherGender></OtherGender>
 
-          <div>
-            <button className={syteles.button} type="submit" value="Submit">Submit</button>
-          </div>
-        </form>
-      </div>
-    )
-  }
+        <div>
+          <button className={syteles.button} type="submit" value="Submit">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+}

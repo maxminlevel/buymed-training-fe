@@ -1,5 +1,5 @@
 import { useState } from "react";
-import syteles from '@/styles/Buymed.module.css'
+import syteles from "@/styles/Buymed.module.css";
 
 export default function Ex1() {
   let [text, setText] = useState("");
@@ -11,8 +11,10 @@ export default function Ex1() {
 
   return (
     <div>
-      <button onClick={handleChangeText} className={syteles.button} >Click me !!!</button>
+      <button onClick={handleChangeText} className={syteles.button}>
+        Click me !!!
+      </button>
       <h4>{text}</h4>
     </div>
-  )
+  );
 }
