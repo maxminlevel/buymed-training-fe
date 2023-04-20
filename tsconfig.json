@@ -18,6 +18,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/ex1.tsx", "src/components/ex2.tsx", "src/pages/404.js", "src/components/ex3.jsx", "src/pages/exercise/[exerciseId].js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/ex1.tsx", "src/components/ex2.tsx", "src/pages/404.js", "src/components/ex3.jsx", "src/pages/exercise/[exerciseId].js", "src/pages/exercise/index.js"],
   "exclude": ["node_modules"]
 }

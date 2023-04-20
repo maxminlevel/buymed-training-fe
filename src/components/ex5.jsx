@@ -21,7 +21,7 @@ export default function Ex5() {
   if (userList) {
     return (
       <div>
-        <ol>
+        <ul>
           {userList.map((user) => (
             <li key={user.id}>
               <User
@@ -37,7 +37,7 @@ export default function Ex5() {
               />
             </li>
           ))}
-        </ol>
+        </ul>
       </div>
     );
   } else {
